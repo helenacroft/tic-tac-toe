@@ -27,7 +27,7 @@ class TicTacToe {
     }
 
     noMoreTurns() {
-
+        return this.emptyFields ? false : true;
     }
 
     isDraw() {
@@ -35,6 +35,7 @@ class TicTacToe {
     }
 
     getFieldValue(rowIndex, colIndex) {
+        return this.matrix[rowIndex][colIndex] ? this.matrix[rowIndex][colIndex] : null;
 
     }
 }
