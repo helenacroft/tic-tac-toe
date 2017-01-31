@@ -59,7 +59,7 @@ class TicTacToe {
     }
 
     getFieldValue(rowIndex, colIndex) {
-        return this.matrix[rowIndex][colIndex] ? this.matrix[rowIndex][colIndex] : null;
+        return this.matrix[rowIndex][colIndex];
 
     }
 }
