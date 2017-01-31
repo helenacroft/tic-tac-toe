@@ -8,14 +8,19 @@ class TicTacToe {
     }
 
     getCurrentPlayerSymbol() {
-
+        return this.currentPlayer;        
     }
 
     nextTurn(rowIndex, columnIndex) {
-
+        if (!this.matrix[rowIndex][columnIndex]) {
+            this.matrix[rowIndex][columnIndex] = this.currentPlayer; 
+            this.currentPlayer == 'x' ? this.currentPlayer = 'o' : this.currentPlayer = 'x';
+            this.emptyFields--;
+        }
     }
 
     isFinished() {
+        return this.noMoreTurns() || this.getWinner() ? true : false ;  
 
     }
     checkRowsAndColumns() {
@@ -42,7 +47,7 @@ class TicTacToe {
     }
 
     getWinner() {
-        var winner = this.checkRowsAndColumns() || this.checkDiagonals(); 
+        var winner = this.checkRowsAndColumns() || this.checkDiagonals();        
         return winner;  
     }
 
@@ -51,7 +56,7 @@ class TicTacToe {
     }
 
     isDraw() {
-
+        return this.noMoreTurns() && !this.getWinner();
     }
 
     getFieldValue(rowIndex, colIndex) {
