@@ -46,9 +46,8 @@ class TicTacToe {
         return null;
     }
 
-    getWinner() {
-        var winner = this.checkRowsAndColumns() || this.checkDiagonals();        
-        return winner;  
+    getWinner() {             
+        return this.checkRowsAndColumns() || this.checkDiagonals(); 
     }
 
     noMoreTurns() {
